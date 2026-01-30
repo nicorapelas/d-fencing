@@ -1,23 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const bgImage = `${process.env.PUBLIC_URL}/homeBackground.png`;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+    <div className="coming-soon">
+      <div
+        className="coming-soon__bg"
+        style={{ backgroundImage: `url(${bgImage})` }}
+        aria-hidden="true"
+      />
+      <div className="coming-soon__overlay" />
+      <main className="coming-soon__content">
+        <img
+          src={`${process.env.PUBLIC_URL}/d-fencing-logo-less.png`}
+          className="coming-soon__logo"
+          alt="D-Fencing logo"
+        />
+        <h1 className="coming-soon__title">D-Fencing</h1>
+        <p className="coming-soon__tagline">Coming Soon</p>
         <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="mailto:info@d-fencing.co.za"
+          className="coming-soon__email"
         >
-          Learn React
+          info@d-fencing.co.za
         </a>
-      </header>
+      </main>
     </div>
   );
 }
